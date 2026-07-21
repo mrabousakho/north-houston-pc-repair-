@@ -258,6 +258,21 @@
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
   #toTop{position:fixed;bottom:16px;left:16px;z-index:70;width:44px;height:44px;border-radius:12px;display:none;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--card-line);color:var(--cyan);cursor:pointer;font-size:1.15rem;box-shadow:0 8px 22px -8px rgba(0,0,0,.6)}
   #toTop.show{display:flex}
+
+  /* ---- market price table ---- */
+  .pricetbl-wrap{margin-top:20px;overflow-x:auto;border:1px solid var(--card-line);border-radius:14px;background:var(--card)}
+  .pricetbl{width:100%;border-collapse:collapse;min-width:620px}
+  .pricetbl th,.pricetbl td{padding:13px 16px;text-align:left;border-top:1px solid var(--line);font-size:.9rem;vertical-align:middle}
+  .pricetbl thead th{background:rgba(255,255,255,.02);border-top:0;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:800}
+  .pricetbl thead th.you-col{color:var(--cyan)}
+  .pricetbl tbody td:first-child{font-weight:700;color:var(--ink)}
+  .pricetbl .mkt{color:var(--dim);text-decoration:line-through;text-decoration-color:rgba(147,166,194,.55)}
+  .pricetbl .you-col{background:rgba(34,211,238,.06)}
+  .pricetbl .you{color:var(--cyan);font-weight:800;white-space:nowrap}
+  .pricetbl .you small{color:var(--muted);font-weight:600;font-size:.78rem}
+  .pricetbl .inc{color:var(--muted);font-size:.84rem}
+  .pricetbl tbody tr:hover td{background:rgba(34,211,238,.04)}
+  .pricetbl tbody tr:hover td.you-col{background:rgba(34,211,238,.1)}
 </style>
 </head>
 <body>
@@ -452,6 +467,29 @@
         <div class="grow"><span class="g-ico">🚗</span><div><b>On-site &amp; Remote</b><br><small>I come to you in North Houston, or fix it remotely.</small></div></div>
       </div>
     </div>
+
+    <div class="sec-head center" style="margin-top:46px">
+      <span class="kicker">Priced to beat the Houston market</span>
+      <h3 style="font-size:1.45rem">Their price vs. my price</h3>
+      <p class="muted">Same work, a fraction of the cost. See it side by side.</p>
+    </div>
+    <div class="pricetbl-wrap reveal">
+      <table class="pricetbl">
+        <thead>
+          <tr><th>Service</th><th>Houston average</th><th class="you-col">My price</th><th>Included free</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Diagnostic fee</td><td class="mkt">$65–$90</td><td class="you you-col">FREE <small>with repair</small></td><td class="inc">You never pay just to find the problem</td></tr>
+          <tr><td>Virus / malware removal</td><td class="mkt">$80–$150</td><td class="you you-col">$69 <small>flat</small></td><td class="inc">Free antivirus install included</td></tr>
+          <tr><td>OS reinstall / tune-up</td><td class="mkt">$100–$150</td><td class="you you-col">$79 <small>flat</small></td><td class="inc">Free data backup up to 50GB</td></tr>
+          <tr><td>SSD / RAM upgrade</td><td class="mkt">$70–$100</td><td class="you you-col">$49 <small>labor</small></td><td class="inc">Bundle discount if you do both</td></tr>
+          <tr><td>Laptop screen replace</td><td class="mkt">$150–$320</td><td class="you you-col">$99 <small>labor + parts</small></td><td class="inc">Parts at cost — no markup</td></tr>
+          <tr><td>Power supply replace</td><td class="mkt">$60–$115</td><td class="you you-col">$45 <small>labor + parts</small></td><td class="inc">Fast, same-day turnaround</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted center" style="font-size:.78rem;margin-top:10px">Labor prices shown. Any parts supplied at cost, no markup. Found it cheaper locally? Show me the quote and I'll beat it.</p>
+
     <div class="compare reveal">
       <div class="crow head"><div>What matters</div><div class="h-us">North Houston PC Repair</div><div>Big-box store</div></div>
       <div class="crow"><div class="feat">Price per repair</div><div class="us"><b>Under $100</b>, flat</div><div class="them">$150+, often hourly</div></div>
